@@ -6,11 +6,15 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero-section";
 import { HowItWorks } from "@/components/how-it-works";
 
+import { Suspense } from "react";
+
 export default function Home() {
   return (
       <main className="min-h-screen">
         <Header/>
-        <Hero/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Hero/>
+        </Suspense>
         <HowItWorks/>
         <ContactSection/>
         <Footer/>
